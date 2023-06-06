@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tongModule = +prompt('nhap tong so buoi cua module');
+    let nghiModule = +prompt('nhap tong so buoi nghi cua ban vao day');
+    let r = (nghiModule / tongModule) * 100;
+    if (r <= 10) {
+        alert("can chu y");
+    }
+    if (r > 10) {
+        alert("gui mail warning");
+    } else if (r >= 20) {
+        alert("buoc chuyen lop");
+    }
+</script>
+</body>
+</html>

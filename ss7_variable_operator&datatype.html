@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <th>TIP CALCULATOR</th>
+    <tr>
+        <td>How much was your bill?</td>
+    </tr>
+    <tr>
+        <td>$<input type="number" value=" " id="price"></td>
+    </tr>
+    <tr>
+        <td>How was your service?</td>
+    </tr>
+    <td>
+        <select style="width: 80%" id="option">
+            <option value="30"> 30% - Outstanding</option>
+            <option value="20"> 20% - Good</option>
+            <option value=" 15"> 15% - It was OK</option>
+            <option value="10 ">10% - BAD</option>
+            <option value=" 5">5% - Terrible</option>
+        </select>
+    </td>
+    <tr>
+        <td>How many people are sharing the bill?</td>
+    </tr>
+    <tr>
+        <td><input type="number" id="people"> people</td>
+    </tr>
+    <tr>
+        <td><input style=" background-color: red; color: white;width:200px;text-align: center" type="button"
+                   onclick="calculateTip()" value="CALCULATE!" id="total"></td>
+    </tr>
+    <tr>
+        <td>
+            <div id="result"></div>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center"> TIP AMOUNT each</td>
+    </tr>
+</table>
+<script>
+    function calculateTip() {
+        let a = document.getElementById("price").value;
+        let b = document.getElementById("option").value;
+        let c = document.getElementById("people").value;
+        let total = (a / c) * (b / 100);
+        document.getElementById("result").innerHTML = total;
+    }
+</script>
+</body>
+</html>

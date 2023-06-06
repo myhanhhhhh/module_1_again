@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salary = +prompt('nhap luong cua ban vao day');
+    let hour = +prompt('nhap gio lam viec cua ban vao day');
+    if (hour >= 200) {
+        alert("tien thuong cua ban la: " + 0.2 * salary + " VND");
+    } else if (hour >= 100 && hour < 200) {
+        alert("tien thuong cua ban la: " + 0.1 * salary + " VND");
+    } else {
+        alert("khong co tien thuong");
+    }
+</script>
+</body>
+</html>

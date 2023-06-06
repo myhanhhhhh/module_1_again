@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table style="width: 60%">
+    <tr >
+        <td>Amount</td>
+        <td>From Currency</td>
+        <td>To Currency</td>
+    </tr>
+    <tr>
+        <td><input type="text" value="1" id="amount"></td>
+        <td>
+            <select name="country" id="from">
+                <option value="a">USD</option>
+                <option value="b">VND</option>
+            </select>
+        </td>
+        <td>
+            <select name="money" id="to" >
+                <option value="a">USD</option>
+                <option value="b">VND</option>
+            </select>
+        </td>
+        <td><input type="submit" onclick="convertmoney()" value="Convert"></td>
+    </tr>
+</table>
+<script>
+    function convertmoney(){
+        // document.getElementById("amount")
+        //     document.getElementById("from")
+        //     document.getElementById("to")
+        let x = document.getElementById("amount").value;
+        let y = document.getElementById("from").value;
+        let z = document.getElementById("to").value;
+        if (y == "a" && z == "b") {
+            let p = x / 23000;
+            document.write("result: " + p);
+        }
+        else {
+            let s = x * 23000;
+            document.write("result: " + s);
+        }
+    }
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

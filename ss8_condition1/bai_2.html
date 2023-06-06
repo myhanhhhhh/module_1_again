@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let month = +prompt('nhap so thang');
+    let year = +prompt('nhap so nam');
+
+    function getMonth(a) {
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                return 'thang ' + month + ' co 31 ngay';
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                return 'thang ' + month + ' co 31 ngay';
+            case 2:
+                if (year % 4 === 0) {
+                    return 'thang ' + month + ' co 29 ngay';
+                } else {
+                    return 'thang ' + month + ' co 28 ngay';
+                }
+        }
+    }
+
+    alert(getMonth(month, year));
+</script>
+</body>
+</html>
