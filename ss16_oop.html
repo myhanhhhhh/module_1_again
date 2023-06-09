@@ -1,10 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<button id="add" onclick="addMoney()">Nạp tiền</button>
+<button id="take" onclick="takeMoney()">Rút tiền</button>
+<br><br>
+<div id="tableString"></div>
+<script>
+    class Account {
+        constructor(number, name, money) {
+            this.number = number;
+            this.name = name;
+            this.money = money;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getNumber() {
+            return this.number;
+        }
+
+        getMoney() {
+            return this.money;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setNumber(number) {
+            this.number = number;
+        }
+
+        setMoney(money) {
+            this.money = money;
+        }
+
+        toString() {
+            return "account: " + this.number + "name account: " + this.name + "so du: " + this.money;
+        }
+    }
+
+    let account1 = new Account('012', 'Nguyen Van A', 30000000);
+    let account2 = new Account('123', 'Nguyen Van B', 40000000);
+    let account3 = new Account('234', 'Nguyen Van C', 50000000);
+    let accountList = [];
+    accountList.push(account1, account2, account3);
+    displayAccountList(accountList);
+
+    function displayAccountList(accountList) {
+        let table = "<table border='1px' style='border-collapse: collapse'>" +
+            "<tr>" +
+            "<th>STT</th>" +
+            "<th>So tai khoan</th>" +
+            "<th>Ten tai khoan</th>" +
+            "<th>Tien trong tai khoan</th>" +
+            "</tr>"
+        for (let i = 0; i < accountList.length; i++) {
+            table += "<tr>" +
+                "<td>" + (i + 1) + "</td>" +
+                "<td>" + accountList[i].number + "</td>" +
+                "<td>" + accountList[i].name + "</td>" +
+                "<td>" + accountList[i].money + "</td>" +
+                "</tr>";
+        }
+        table += "</table>";
+        document.getElementById("tableString").innerHTML = table;
+    }
+
+    function addMoney() {
+        let a = prompt('Nhập số tài khoản cần nạp tiền');
+        let b = +prompt('Nhập số tiền cần nạp');
+        for (let i = 0; i < accountList.length; i++) {
+            if (a === accountList[i].number) {
+                accountList[i].money = +accountList[i].money + b;
+            }
+        }
+        displayAccountList(accountList);
+    }
+
+    function takeMoney() {
+        let a = prompt('Nhập số tài khoản cần rút tiền');
+        let b;
+        let c;
+        let flag = false;
+        for (let i = 0; i < accountList.length; i++) {
+            if (a === accountList[i].number) {
+                b = +prompt('Nhập số tiền cần rút');
+                alert('Số dư trong tài khoản ' + a + " là: " + accountList[i].money);
+                if (accountList[i].money >= b) {
+                    c = confirm('Bạn có muốn rút ' + b + ' trong tài khoản ' + accountList[i].number + ' không??')
+                    if (c === true) {
+                        alert('Số tiền trong tài khoản của bạn còn lại là: ' + (+accountList[i].money - b));
+                        accountList[i].money = +accountList[i].money - b;
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if (flag === false) {
+            alert('Số tài khoản không tồn tại');
+        }
+        displayAccountList(accountList);
+    }
+</script>
 </body>
 </html>

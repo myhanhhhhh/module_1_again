@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let n = +prompt('nhap do dai mang');
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt('nhap phan tu cua mang');
+        debugger
+        for (let j = i - 1; j >= 0; j--) {
+            if (arr[i] === arr[j]) {
+                i--;
+                alert("Da bi trung, hay nhap lai");
+                break;
+            }
+        }
+    }
+    console.log(arr);
+</script>
 </body>
 </html>

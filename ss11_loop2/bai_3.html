@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
 </head>
 <body>
-$END$
+<script>
+    let number;
+    let count;
+    do {
+        count = 0;
+        number = +prompt('nhap so vao de kiem tra');
+        for (let i = 1; i <= number; i++) {
+            if (number % i === 0) {
+                count++;
+            }
+        }
+        if (count === 2) {
+            alert(number + ' la so nguyen to');
+        } else {
+            alert(number + ' khong phai la so nguyen to');
+        }
+    } while (count !==2) ;
+</script>
 </body>
 </html>
