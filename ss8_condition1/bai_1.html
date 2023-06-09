@@ -9,10 +9,17 @@
     let a = +prompt('nhap canh a');
     let b = +prompt('nhap canh b');
     let c = +prompt('nhap canh c');
-    if (a + b > c && a + c > b && b + c > a){
-        alert('la 3 canh cua tam giac vuong can')
-    }else {
-        alert('khong phai la 3 canh cua tam giac vuong can')
+    a = b + c;
+    b = a + c;
+    c = b + a;
+    if (a === b && a > c && b > c) {
+        alert("la 3 canh cua tam giac vuong can");
+    } else if (b === c && b > a && c > a) {
+        alert("la 3 canh cua tam giac vuong can");
+    } else if (c === a && c > b && a > b) {
+        alert("la 3 canh cua tam giac vuong can");
+    } else {
+        alert("khong phai la 3 canh cua tam giac vuong can");
     }
 </script>
 </body>
