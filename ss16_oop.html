@@ -46,9 +46,9 @@
         }
     }
 
-    let account1 = new Account('012', 'Nguyen Van A', 30000000);
-    let account2 = new Account('123', 'Nguyen Van B', 40000000);
-    let account3 = new Account('234', 'Nguyen Van C', 50000000);
+    let account1 = new Account('201', 'Nguyen Van A', 30000000);
+    let account2 = new Account('202', 'Nguyen Van B', 40000000);
+    let account3 = new Account('203', 'Nguyen Van C', 50000000);
     let accountList = [];
     accountList.push(account1, account2, account3);
     displayAccountList(accountList);
@@ -78,7 +78,7 @@
         let b = +prompt('Nhập số tiền cần nạp');
         for (let i = 0; i < accountList.length; i++) {
             if (a === accountList[i].number) {
-                accountList[i].money = +accountList[i].money + b;
+                accountList[i].money = accountList[i].money + b;
             }
         }
         displayAccountList(accountList);
@@ -94,10 +94,10 @@
                 b = +prompt('Nhập số tiền cần rút');
                 alert('Số dư trong tài khoản ' + a + " là: " + accountList[i].money);
                 if (accountList[i].money >= b) {
-                    c = confirm('Bạn có muốn rút ' + b + ' trong tài khoản ' + accountList[i].number + ' không??')
+                    c = confirm('Bạn có muốn rút ' + b + ' VND trong tài khoản ' + accountList[i].number + ' không??')
                     if (c === true) {
-                        alert('Số tiền trong tài khoản của bạn còn lại là: ' + (+accountList[i].money - b));
-                        accountList[i].money = +accountList[i].money - b;
+                        alert('Số tiền trong tài khoản của bạn còn lại là: ' + (accountList[i].money - b));
+                        accountList[i].money = accountList[i].money - b;
                         flag = true;
                         break;
                     }
