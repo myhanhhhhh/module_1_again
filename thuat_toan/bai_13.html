@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [8,4,2,8,8,10,12];
+    let max = arr [0];
+    let second = 0;
+    let box;
+
+    function checkMax(array) {
+        for (let i = 0; i < array.length; i++) {
+            debugger
+            if (max < array[i]) {
+                max = array[i];
+            } else if (second < array[i] && max > array[i]) {
+                second = array[i];
+                box = arr.indexOf(second);
+            }
+        }
+        console.log(second);
+        if (second === 0) {
+            return -1;
+        }else {
+            return box;
+        }
+    }
+
+    // console.log(arr3)
+    console.log(max);
+    alert(checkMax(arr));
+    // for (let i = 0; i < arr2.length; i++) {
+    //     for (let j = i + 1; j < arr2.length; j++) {
+    //         if (arr2[i] > arr2[j]) {
+    //             let temp = arr2[i];
+    //             arr2[i] = arr2[j];
+    //             arr2[j] = temp;
+    //         }
+    //     }
+    // }
+    //
+    // console.log(arr2)
+</script>
+</body>
+</html>

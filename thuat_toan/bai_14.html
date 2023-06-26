@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "cabca";
+    let array = str.split('');
+    let arr = [];
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        debugger
+        let index = arr.indexOf(array[i])
+        if (index === -1) {
+            arr.push(array[i]);
+            count++;
+        }
+    }
+    console.log(count)
+</script>
+</body>
+</html>

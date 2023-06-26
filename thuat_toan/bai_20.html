@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = ["abc", "", "aaa", "a", "zz"];
+    let box = [];
+    let max = array[0];
+    for (let i = 0; i < array.length; i++) {
+        if (max.length < array[i].length) {
+            max = array[i];
+        }
+    }
+    console.log(max.length);
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].length === max.length) {
+            box.push(array[i]);
+        }
+    }
+    for (let i = 0; i < box.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+            if (box[i] === array[j]) {
+                array.splice(j, 1);
+            }
+        }
+    }
+    console.log(box);
+    console.log(array);
+    for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[i].length > array[j].length) {
+                let temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+    let sum = array.concat(box);
+    console.log(sum);
+</script>
+</body>
+</html>

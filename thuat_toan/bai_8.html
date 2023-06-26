@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let parent = [1, 4, 5, 2, 3];
+    let child = [1, 2, 3];
+    let arr = [];
+    for (let i = 0; i < child.length; i++) {
+        let count = 0;
+        for (let j = 0; j < parent.length; j++) {
+            if (child[i] === parent[j]) {
+                count++;
+            }
+        }
+        arr.push(count);
+    }
+
+    function findMin() {
+        let min = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (min > arr[i]) {
+                min = arr[i]
+            }
+        }
+        return min;
+    }
+    // console.log(arr);
+    alert(findMin(arr));
+</script>
+</body>
+</html>

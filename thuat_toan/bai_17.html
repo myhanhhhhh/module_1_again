@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str1 = "abc";
+    let str2 = "cdba";
+    let arr1 = str1.split('');
+    let arr2 = str2.split('');
+    let array = [];
+
+    function checkString(array) {
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                if (arr1[i] === arr2[j]) {
+                    array.push(arr1[i]);
+                }
+            }
+        }
+        if (array.length === arr1.length) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    alert(checkString(array));
+    console.log(array);
+</script>
+</body>
+</html>

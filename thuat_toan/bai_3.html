@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let a = [1, 2, 3, 3];
+    // let max = 0;
+    // for (let i = 0; i < a.length; i++) {
+    //     if (max < a[i]) {
+    //         max = a[i];
+    //     }
+    // }
+    // let count1 = 0;
+    // let count2 = 0;
+    // // let flag = false;
+    // for (let i = 0; i < a.length; i++) {
+    //     for (let j = i + 1; j < a.length; j++) {
+    //         if (a[i] + a[j] === max) {
+    //             count1++;
+    //             // flag = true;
+    //             break;
+    //         }
+    //     }
+    // }
+    // console.log(count1)
+    // for (let i = max + 1; i < a.length; i++) {
+    //     if (max === a[i]) {
+    //         count2++;
+    //         // flag= true;
+    //         break;
+    //     }
+    //     // console.log(count1);
+    //
+    // }
+    // console.log(count2)
+    // if (count1 === count2) {
+    //     alert('true');
+    // } else {
+    //     alert('false');
+    // }
+    let arr = [1,2,3];
+    let sumLeft = 0;
+    let sumRight = 0;
+
+    function beautifulNumber(a) {
+        debugger
+        for (let i = 0; i < a.length; i++) {
+            for (let j = 0; j < a.length; j++) {
+                if (j < i) {
+                    sumLeft += a[j];
+                }
+                if (j > i) {
+                    sumRight += a[j];
+                }
+            }
+            if (sumRight === sumLeft) {
+                return true;
+            } else {
+                sumRight = 0;
+                sumLeft = 0;
+            }
+        }
+        return false;
+    }
+    alert(beautifulNumber(arr));
+</script>
+</body>
+</html>

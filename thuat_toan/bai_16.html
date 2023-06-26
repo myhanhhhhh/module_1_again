@@ -7,17 +7,14 @@
 <body>
 <script>
     let a = [1, 2, 3];
-    let max = 0;
+    let sum = 0;
+    let b = [];
     for (let i = 0; i < a.length; i++) {
-        if (max < a[i]) {
-            max = a[i];
-        }
+        sum += a[i];
+        b.push(sum);
+        // b[i] = b[i-1] +a[i];
     }
-    for (let i = 0; i < a.length; i++) {
-        if (a[0] + a[i + 1] === a[i]){
-
-        }
-            }
+    console.log(b);
 </script>
 </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [-1, 150, 190, 170, -1, -1, 160, 180];
+    let arr = [];
+    // let min = arr1[0];
+    // let arr2 = [];
+    let first = 0;
+    let last = arr.length - 1;
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] !== -1) {
+            arr.push(a[i]);
+        }
+
+    }
+    while (first >last) {
+        let array= arr[last];
+        arr[last] = arr[first];
+        arr[first] = array;
+        last++;
+        first--;
+    }
+    console.log(arr);
+</script>
+</body>
+</html>
+<!--<script>-->
+<!--    // let num = [1, 6, 3, 10, 11, 29, 27, 8, 12, 15];-->
+
+<!--    while (first < last) {-->
+<!--        let arr2= num[first];-->
+<!--        num[first] = num[last];-->
+<!--        num[last] = arr2;-->
+<!--        first++;-->
+<!--        last&#45;&#45;;-->
+<!--    }-->
+<!--    document.write(num);-->
+<!--</script>-->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt('nhap do dai cua mang');
+    let arr = [];
+    let flag = true;
+    let k;
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt('nhap phan tu trong mang');
+    }
+
+    function checkArray(arr) {
+
+        console.log(k)
+        for (let i = 0; i < arr.length - 1; i++) {
+            if ((arr[i] + k) !== arr[i + 1]) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag === true) {
+            return 'true';
+        } else {
+            return 'false';
+        }
+    }
+
+    alert(checkArray(arr));
+</script>
+</body>
+</html>

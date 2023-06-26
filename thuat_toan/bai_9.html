@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [7, 90];
+    let sum = 11;
+    let count = 0;
+    let box = [];
+    for (let i = arr[0]; i < arr[1]; i++) {
+        if (i < 10) {
+            count++;
+            box.push(count);
+        }
+        if (i === 11) {
+            count++;
+            box.push(count);
+            for (let j = i; j < arr[1];) {
+                sum += j;
+                j = sum;
+                if (sum < arr[1]) {
+                    count++;
+                    box.push(count);
+                }
+                sum = 11;
+            }
+        }
+    }
+    console.log(arr);
+    console.log(box.length);
+</script>
+</body>
+</html>

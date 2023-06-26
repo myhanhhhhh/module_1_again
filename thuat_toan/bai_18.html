@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = [6, 2, 3, 8];
+    let min = number [0];
+    let max = number[0];
+    let array = [];
+    let arr = [];
+    for (let i = 0; i < number.length; i++) {
+        //debugger
+        if (min > number [i]) {
+            min = number[i];
+        } else {
+            max = number[i];
+        }
+    }
+    for (let i = 0; i <= number.length; i++) {
+        if (min++ < max) {
+            array.push(min);
+        }
+    }
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < number.length; j++) {
+            if (number[j] === array[i]) {
+                array.splice(i, 1);
+            }
+        }
+    }
+    console.log(array);
+    // console.log(min);
+    // console.log(max);
+</script>
+</body>
+</html>
