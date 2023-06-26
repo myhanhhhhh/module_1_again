@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let salary = +prompt('Nhân viên hãy nhập lương vào đây');
+    if (salary >= 15000000) {
+        let tax = salary * 0.2;
+        alert('Thuế thu nhập phải đóng là: ' + tax + " và Lương được nhận là: " + (salary - tax))
+    } else if (7000000 <= salary < 15000000) {
+        let tax = salary * 0.1;
+        alert('Thuế thu nhập phải đóng là: ' + tax + " và Lương được nhận là: " + (salary - tax));
+    } else if (salary < 7000000) {
+        let tax = salary * 0.05;
+        alert('Thuế thu nhập phải đóng là: ' + tax + " và Lương được nhận là: " + (salary - tax));
+    }
+</script>
 </body>
 </html>

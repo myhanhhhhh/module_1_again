@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let s1 = "aabcc";
+    let s2 = "adcaa";
+    let array = [];
+    let arr1 = s1.split('');
+    let arr2 = s2.split('');
+    let index1;
+    let index2;
+    let count = 0;
+    for (let i = 0; i < arr1.length; i++) {
+        for (let j = 0; j < arr2.length; j++) {
+            if (arr1[i] === arr2[j]) {
+                array.push(arr1[i]);
+                arr2.splice(j, 1);
+                break;
+            }
+        }
+    }
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === array[i + 1]) {
+            count++
+            index1 = i;
+        } else {
+            array[i];
+            index2 = i;
+        }
+    }
+    alert('So ki tu chung la ' + (array.length) + ". Trong do co "+ (count + 1) + " ki tu " + (array[index1]) + " va ki tu " + (array[index2]));
+
+</script>
 </body>
 </html>

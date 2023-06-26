@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let arr = [1, 2, 2, 3, 1, 3, 1, 3, 2];
+    let array = [];
+    let a = [];
+    for (let i = 0; i < arr.length; i++) {
+        a.push(arr[i]);
+    }
+
+    function checkArray(x) {
+        // let count1=0;
+        // let count2=0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] === arr[j]) {
+                    array.push(arr[i]);
+                    arr.splice(i, 1);
+                    arr.splice(j - 1, 1);
+                    i--;
+                }
+            }
+        }
+        // console.log(a);
+        console.log(array);
+
+        let count = 0;
+        let box = [];
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < a.length; j++) {
+                if (array[i] === a[j]) {
+                    count++;
+                }
+            }
+            box.push(count);
+            count = 0;
+        }
+        // console.log(box);
+        let flag = true;
+        for (let i = 1; i < box.length; i++) {
+            if (box[0] !== box[i]) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    alert(checkArray(a));
+</script>
 </body>
 </html>

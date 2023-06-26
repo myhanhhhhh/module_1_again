@@ -6,35 +6,15 @@
 </head>
 <body>
 <script>
-    // let arr2 = [1, 2, 2, 1];
-    let array2 = [1, 2, 2, 3, 1, 3, 1, 3, 2];
+    let array = [1, 2, 2, 3, 1, 3, 1, 3, 2];
     let arr = [];
-    // let count = 0;0
-    // function checkNumber(check) {
-    //     for (let i = 0; i < check.length; i++) {
-    //             if (!arr1.includes(check[i])) {
-    //                 arr1.push(check[i]);
-    //         }
-    //     }
-    //     console.log(arr1)
-    //     console.log(arr2)
-    //     for (let i = 0; i < check.length; i++) {
-    //         if (arr1[0] === check[i]) {
-    //             count++;
-    //         }
-    //     }
-    //     console.log(count)
-    //     let flag = true
-    //     let arr3 = [];
-    // debugger
-    // let arr3 = []
     let count = 1;
-    for (let i = 0; i < array2.length; i++) {
-        for (let j = i + 1; j < array2.length; j++) {
-            if (array2[i] === array2[j]) {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[i] === array[j]) {
                 count++;
-                array2.splice(j, 1);
-                j = j - 1;
+                array.splice(j, 1);
+                j--;
             }
         }
         arr.push(count);
@@ -48,7 +28,6 @@
             if (arr[i] !== arr[j]) {
                 flag = false;
             }
-
         }
     }
     if (flag) {
@@ -56,23 +35,6 @@
     } else {
         alert(false);
     }
-
-
-    //     8
-    //     console.log(count2)
-    //     if (count !== count2) {
-    //         alert('false')
-    //         flag = false
-    //     }
-    // }
-    // if (flag) {
-    //     alert('true')
-    // }
-    // }
-    //
-    // checkNumber(arr2)
-    //
-    // // console.consolelog(arr2);
 </script>
 </body>
 </html>

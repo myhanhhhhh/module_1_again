@@ -1,10 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let giaMua = [3, 2, 1, 0, 3];
+    let n = 10;
+    let x;
+    let arr = [];
+    let max = arr[0];
+    let flag = false
+    for (let i = 0; i < giaMua.length; i = i + 2) {
+        if (giaMua.length % 2 === 0) {
+            if (giaMua[i] === 0) {
+                continue;
+            }
+            x = n - giaMua[i] + giaMua[i + 1];
+            arr.push(x);
+        } else {
+            for (let j = 0; j < giaMua.length; j++) {
+                if (giaMua[j] === 0) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag === false) {
+                giaMua.length--;
+                x = n - giaMua[i] + giaMua[i + 1];
+                arr.push(x);
+            }
+        }
+    }
+    debugger
+    for (let i = 0; i < giaMua.length; i += 2) {
+        for (let j = 0; j < giaMua.length; j++) {
+            if (giaMua[j] === 0) {
+                giaMua.splice(j, 1);
+            }
+        }
+        if (giaMua.length % 2 === 0) {
+            x = n - giaMua[i] + giaMua[i + 1];
+            arr.push(x);
+        }
+    }
+    console.log(arr);
+    for (let i = 0; i < arr.length; i++) {
+        if (max < arr[i]) {
+            max = arr[i];
+        }
+    }
+    console.log(max);
+</script>
 </body>
 </html>

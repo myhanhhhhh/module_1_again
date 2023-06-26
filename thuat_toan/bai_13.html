@@ -6,43 +6,60 @@
 </head>
 <body>
 <script>
-    let array = [8,4,2,8,8,10,12];
-    let max = arr [0];
-    let second = 0;
-    let box;
-
-    function checkMax(array) {
-        for (let i = 0; i < array.length; i++) {
-            debugger
-            if (max < array[i]) {
-                max = array[i];
-            } else if (second < array[i] && max > array[i]) {
-                second = array[i];
-                box = arr.indexOf(second);
+    let array = [8, 8, 8, 8, 8, 8, 8];
+    let a = [...array];
+    for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[i] < array[j]) {
+                let temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
             }
-        }
-        console.log(second);
-        if (second === 0) {
-            return -1;
-        }else {
-            return box;
         }
     }
 
-    // console.log(arr3)
-    console.log(max);
-    alert(checkMax(arr));
-    // for (let i = 0; i < arr2.length; i++) {
-    //     for (let j = i + 1; j < arr2.length; j++) {
-    //         if (arr2[i] > arr2[j]) {
-    //             let temp = arr2[i];
-    //             arr2[i] = arr2[j];
-    //             arr2[j] = temp;
+    function checkNumber(arr) {
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[0] === arr[i]) {
+                console.log(-1);
+            }
+        }
+    }
+
+    checkNumber(array);
+
+    console.log(a)
+    // console.log(array[1]);
+    console.log(a.indexOf(6))
+
+    // function checkNumber(arr) {
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (max < arr[i]) {
+    //             max = arr[i];
     //         }
     //     }
+    //     console.log(arr);
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (max === arr[i]) {
+    //             arr.splice(i,1)
+    //         }
+    //     }
+    //     max = arr[0];
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (max < arr[i]) {
+    //             max = arr[i];
+    //         }
+    //     }
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if(arr[0] === arr[i]){
+    //             return -1;
+    //         }
+    //     }
+    //     console.log(max)
+    //     return arr.indexOf(max)
     // }
     //
-    // console.log(arr2)
+    // console.log((checkNumber(array)));
 </script>
 </body>
 </html>

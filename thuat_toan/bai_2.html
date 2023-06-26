@@ -17,12 +17,14 @@
             if (arr2[i] === arr1[j]) {
                 arr.push(arr2[i]);
                 arr1.splice(j, 1);
-                count++;
+                break;
             }
         }
     }
     console.log(arr);
-    console.log(count);
+    console.log(arr.length);
+    // console.log(count);
+
 </script>
 </body>
 </html>

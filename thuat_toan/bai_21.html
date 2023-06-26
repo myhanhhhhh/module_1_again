@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let a = +prompt('nhap so vao day de kiem tra');
+    let giaiThua = 1;
+    let arr = [];
+    for (let i = 1; i <= a; i++) {
+        giaiThua *= i;
+    }
+    let string = giaiThua.toString();
+    let array = string.split('');
+    console.log(array);
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === "0") {
+            arr.push(array[i - 1]);
+        }
+    }
+    console.log(arr);
+</script>
 </body>
 </html>

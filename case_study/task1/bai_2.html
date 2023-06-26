@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let a;
+    let nguyenAm;
+    let flag = false;
+    do {
+        a = prompt('Nhập kí tự muốn kiểm tra');
+        nguyenAm = ['o', 'u', 'i', 'a', 'e'];
+        for (let i = 0; i < nguyenAm.length; i++) {
+            if (nguyenAm[i] === a || nguyenAm[i].toUpperCase() === a) {
+                alert(a + ' là nguyên âm');
+                flag = true;
+                break;
+            }
+        }
+        if (flag === false) {
+            alert(a + ' là phụ âm');
+        }
+        if (!isNaN(a)) {
+            alert('hay nhap chu');
+        }
+    } while (isNaN(a))
+</script>
 </body>
 </html>

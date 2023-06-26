@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let s = 'aadccbe';
+    let array = s.split('');
+    let arr = [];
+    count = 0;
+    for (let i = 0; i < s.length; i++) {
+        let index = arr.indexOf(array[i]);
+        if (index === -1) {
+            arr.push(array[i]);
+            count++;
+        }
+    }
+    alert(count);
+</script>
 </body>
 </html>

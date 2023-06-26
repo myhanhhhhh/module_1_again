@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let h = +prompt('Hãy nhập chiều cao tam giác');
+    for (let i = 0; i <= h; i++) {
+        for (let j = 0; j <= h * 2; j++) {
+            if ( j - i < h && i + j > h ) {
+                document.writeln('*')
+            } else {
+                document.writeln('&nbsp&nbsp');
+            }
+        }
+        document.writeln('<br>');
+    }
+</script>
 </body>
 </html>

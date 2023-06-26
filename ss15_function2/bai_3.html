@@ -7,7 +7,6 @@
 <body>
 <script>
     let n = +prompt('nhap vao so');
-    findMaxNumber(n);
 
     function findMaxNumber(n) {
         let string = n.toString();
@@ -20,10 +19,11 @@
                 }
             }
         } else {
-            alert("-1");
+            return -1;
         }
-        alert(arr.join(''));
+        return arr.join('');
     }
+    alert(findMaxNumber(n));
 </script>
 </body>
 </html>
