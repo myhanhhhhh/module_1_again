@@ -5,106 +5,101 @@
     <title>Title</title>
 </head>
 <body>
-<button id="add" onclick="addStudent()"> Thêm mới học viên</button>
-<button id="edit" onclick="editStudent()"> Sửa thông tin học viên</button>
-<button id="delete" onclick="deleteStudent()"> Xoá học viên</button>
-<br><br>
-<div id="tableStudent"></div>
+<button id="add" onclick="addStudent()"> them moi hoc vien</button>
+<button id="edit" onclick="editStudent()"> sua thong tin hoc vien</button>
+<button id="delete" onclick="deleteStudent()"> xoa hoc vien</button>
+<br>
+<br>
+<div id="tableStr"></div>
 <script>
     class Student {
-        constructor(id, name, grade, email, dateOfBirth, module) {
+        constructor(id, name, grade, email, date) {
             this.id = id;
             this.name = name;
             this.grade = grade;
             this.email = email;
-            this.dateOfBirth = dateOfBirth;
-            this.module = module;
+            this.date = date;
         }
+
+        z
     }
 
-    let student1 = new Student('HV-0001', 'Nguyen van A', 'C1022G1', 'nguyenvana@gmail.com', '01/01/2001', 'module 1');
-    let student2 = new Student('HV-0002', 'Nguyen van B', 'C1122G1', 'nguyenvanb@gmail.com', '01/02/2001', 'module 1');
-    let student3 = new Student('HV-0003', 'Nguyen van C', 'C1222G1', 'nguyenvanc@gmail.com', '01/03/2001', 'module 1');
+    let student1 = new Student("H1", "nguyen van a", "c1022g1", "a.@gmail.com", "1/1/2000")
+    let student2 = new Student("H2", "nguyen van b", "c1022g1", "b.@gmail.com", "1/2/2000")
+    let student3 = new Student("H3", "nguyen van c", "c1022g1", "c.@gmail.com", "1/3/2000")
     let studentList = [];
     studentList.push(student1, student2, student3);
-    displayStudentList(studentList);
+    displayStudentList(studentList)
 
+    function displayStudentList(list) {
+        let table = `<table border='1px' style='border-collapse: collapse' cellPadding="17"`
+        table += `<tr>
+                    <th>MA</th>
+                    <th>TEN</th>
+                    <th>LOP</th>
+                    <th>EMAIL</th>
+                    <th>NGAY SINH</th>
+                    </tr>`
+        for (let i = 0; i < list.length; i++) {
+            table += `<tr>
+                    <td>${list[i].id}</td>
+                    <td>${list[i].name}</td>
+                    <td>${list[i].grade}</td>
+                    <td>${list[i].email}</td>
+                    <td>${list[i].date}</td>
+                    </tr>`
+        }
+        table += "</table>";
+        document.getElementById("tableStr").innerHTML = table;
+    }
 
     displayStudentList(studentList);
 
     function addStudent() {
-        let a = prompt('Nhập mã học viên');
-        let b = prompt('Nhập tên học viên');
-        let c = prompt('Nhập lớp học viên');
-        let d = prompt('Nhập email học viên');
-        let e = prompt('Nhập ngày sinh học viên');
-        let f = prompt('Nhập module học viên');
-        let newStudent = new Student(a, b, c, d, e, f);
-        studentList.push(newStudent);
+        let id1 = prompt('nhap ma hv');
+        let name1 = prompt('nhap ten hv');
+        let lop1 = prompt('nhap lop hv');
+        let email1 = prompt('nhap email hv');
+        let date1 = prompt('nhap ngay sinh hv');
+        let student4 = new Student(id1, name1, lop1, email1, date1);
+        studentList.push(student4);
         displayStudentList(studentList);
     }
 
-    function displayStudentList(studentList) {
-        let tableStr = "<table border='1px' style='border-collapse: collapse'>"
-        tableStr += "<tr>" +
-            "<th>STT</th>" +
-            "<th>Mã hoc viên</th>" +
-            "<th>Tên</th>" +
-            "<th>Lớp</th>" +
-            "<th>Email</th>" +
-            "<th>Ngày sinh</th>" +
-            "<th>Module</th>" +
-            "</tr>";
-        for (let i = 0; i < studentList.length; i++) {
-            tableStr += "<tr>";
-            tableStr += "<td>" + (i + 1) + "</td>";
-            tableStr += "<td>" + studentList[i].id + "</td>";
-            tableStr += "<td>" + studentList[i].name + "</td>";
-            tableStr += "<td>" + studentList[i].grade + "</td>";
-            tableStr += "<td>" + studentList[i].email + "</td>";
-            tableStr += "<td>" + studentList[i].dateOfBirth + "</td>";
-            tableStr += "<td>" + studentList[i].module + "</td>";
-            tableStr += "</tr>";
-        }
-        tableStr += "</table>";
-        document.getElementById("tableStudent").innerHTML = tableStr;
-    }
-
-    displayStudentList(studentList);
-
     function editStudent() {
-        let a = prompt('Nhập mã học viên');
+        let id1 = prompt('nhap ma hv');
         let flag = false;
         for (let i = 0; i < studentList.length; i++) {
-            if (a === studentList[i].id) {
-                alert('Bạn muốn sữa học viên ' + studentList[i].id + ' phải không');
-                studentList[i].name = prompt('Nhập lại tên học viên');
-                studentList[i].grade = prompt('Nhập lại lớp học viên');
-                studentList[i].email = prompt('Nhập lại email học viên');
-                studentList[i].dateOfBirth = prompt('Nhập lại ngày sinh học viên');
-                studentList[i].module = prompt('Nhập lại module học viên');
+            if (id1 === studentList[i].id) {
+                studentList[i].name = prompt('nhap ten hv');
+                studentList[i].grade = prompt('nhap lop hv');
+                studentList[i].email = prompt('nhap email hv');
+                studentList[i].date = prompt('nhap ngay sinh hv');
                 flag = true;
+                break;
             }
         }
         if (flag === false) {
-            alert('Mã học viên không tồn tại');
+            alert('ma hoc vien khong ton tai');
         }
         displayStudentList(studentList);
     }
 
     function deleteStudent() {
-        let a = prompt('Nhập mã học viên');
+        let id1 = prompt('nhap ma hv');
         let flag = false;
         for (let i = 0; i < studentList.length; i++) {
-            if (a === studentList[i].id) {
-                if (confirm('Bạn có muốn xoá học viên ' + studentList[i].id + ' không')) {
+            flag = true;
+            if (id1 === studentList[i].id) {
+                let str = confirm('ban co muon xoa hv' + id1)
+                if (str === true) {
                     studentList.splice(i, 1);
-                    flag = true;
+                    break;
                 }
             }
         }
         if (flag === false) {
-            alert('Mã học viên không tồn tại');
+            alert('ma hoc vien khong ton tai');
         }
         displayStudentList(studentList);
     }
