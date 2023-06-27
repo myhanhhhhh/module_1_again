@@ -6,21 +6,29 @@
 </head>
 <body>
 <script>
-    let row = +prompt("Nhập row ");
-    let col = +prompt("Nhập col");
-    let arr = [];
-    let sum = 0;
-    debugger
-    for (let i = 0; i < row; i++) {
-        arr[i] = [];
-        for (let j = 0; j < col; j++) {
-            arr[i][j] = +prompt(`Nhập vào phần tử [${i}][${j}]`);
-            if (arr[i][j] % 2 === 0) {
-                sum = sum + arr[i][j];
-            }
+    let string = prompt('Hãy nhập kí tự bạn muốn kiểm tra');
+    let word = string.split(' ');
+    let result = "";
+    let max = word[0];
+    for (let i = 0; i < word.length; i++) {
+        if (word[i] === " " && word[i + 1] === " ") {
+            word.splice(i, 1);
+            i--;
+        } else if (word[i] !== "") {
+            word[i] = word[i].toLowerCase();
+            result = word[i];
+            result = result.split('');
+            result[0] = result[0].toUpperCase();
+            result = result.join('');
+            word[i] = result;
+        }
+
+        if (max.length <= word[i].length) {
+            max = word[i];
         }
     }
-    console.log(sum);
+    console.log(word.join(' '));
+    console.log(max);
 </script>
 </body>
 </html>
