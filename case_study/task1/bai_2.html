@@ -6,26 +6,26 @@
 </head>
 <body>
 <script>
-    let a;
+    let character;
     let nguyenAm;
     let flag = false;
     do {
-        a = prompt('Nhập kí tự muốn kiểm tra');
+        character = prompt('Nhập kí tự muốn kiểm tra');
         nguyenAm = ['o', 'u', 'i', 'a', 'e'];
         for (let i = 0; i < nguyenAm.length; i++) {
-            if (nguyenAm[i] === a || nguyenAm[i].toUpperCase() === a) {
-                alert(a + ' là nguyên âm');
+            if (nguyenAm[i] === character || nguyenAm[i].toUpperCase() === character) {
+                alert(character + ' là nguyên âm');
                 flag = true;
                 break;
             }
         }
         if (flag === false) {
-            alert(a + ' là phụ âm');
+            alert(character + ' là phụ âm');
         }
-        if (!isNaN(a)) {
+        if (!isNaN(character)) {
             alert('hay nhap chu');
         }
-    } while (isNaN(a))
+    } while (isNaN(character));
 </script>
 </body>
 </html>

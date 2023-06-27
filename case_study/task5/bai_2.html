@@ -6,7 +6,6 @@
 </head>
 <body>
 <script>
-
     function findPrime(num) {
         let count = 0;
         for (let i = 1; i <= num; i++) {
@@ -18,26 +17,23 @@
             return true;
         }
     }
+    findPrime();
 
-    function listPrime(arr) {
-        let countSNT = 0;
-        for (let i = 0; i < arr.length; i++) {
-            for (let j = 0; j < arr[i].length; j++) {
-                if (findPrime(arr[i][j])) {
-                    countSNT++;
-                    document.write(arr[i][j] + 'la so nguyen to' +'</br>');
-                }
+    let row = prompt('nhap so  hang');
+    let col = prompt('nhap so cot');
+    let countSNT = 0;
+    let arr = [];
+    for (let i = 0; i < row; i++) {
+        // debugger
+        arr[i] = [];
+        for (let j = 0; j < col; j++) {
+            arr[i][j] = +prompt(`Nhập vào phần tử [${i}][${j}]`);
+            if (findPrime(arr[i][j])) {
+                countSNT++;
             }
         }
-        document.write('Co tat ca' +  countSNT + 'so nguyen to' );
-
     }
-
-    let array = [
-        [2, 3, 4, 5, 6, 7],
-        [8, 9, 10, 11, 12]
-    ];
-    listPrime(array);
+    console.log(countSNT);
 </script>
 </body>
 </html>

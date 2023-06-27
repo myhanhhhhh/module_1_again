@@ -6,21 +6,20 @@
 </head>
 <body>
 <script>
-    let sum = 0;
     let menu;
     let choice;
-    let arr = 0;
+    let sum = 0;
     let price;
     do {
         menu = ['\n 1. Cafe', '\n 2. Cam vắt', '\n 3. Nước ép cà rốt', '\n 4. Nước ép cà chua', '\n 5.  Nước lọc', '\n 6. Nước dừa', '\n 7. Thoát.'];
         price = [15000, 20000, 25000, 30000, 10000, 20000];
         choice = +prompt('Hãy chọn số tương ứng với món bạn thích ' + menu);
         if (choice >= 1 && choice < 7) {
-            let amount = +prompt('Bạn muốn order ' + menu[choice - 1] + ' có giá ' + price[choice - 1] + ' với số lượng bao nhiêu');
+            let amount = +prompt( menu[choice - 1] + ' có giá ' + price[choice - 1] + ' VND. Bạn muốn order với số lượng bao nhiêu ?');
             let total = price[choice - 1] * amount;
-            arr += total
+            sum += total;
         } else if (choice === 7) {
-            alert('Tổng bill của bạn là: ' + arr + ' VND');
+            alert('Tổng bill của bạn là: ' + sum + ' VND');
             alert('Cảm ơn bạn đã ghé thăm. Hẹn gặp lại nhé ^^');
             break;
         }
